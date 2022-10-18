@@ -6,17 +6,20 @@ def programalista(n):
       r=input('nome:').upper().strip()
       lista.append(r)
 while select!='4': 
- select=input('SELECIONE \n0 =apaga,1=adiciona,2=pesquisa,	3=ver lista,4==terminar')
+ select=input('SELECIONE \n0 =apaga,1=adiciona,2=pesquisa,3=ver lista,4=terminar')
  if select=='0':  
     print('-'*20)
     for c,v in enumerate(lista):       
        print(f'{c} {v}')
     print('-'*20)
-    nome=int(input('digite o número do nome'))    
-    if nome<=len(lista)-1:
-       lista.remove(lista[nome])
-    else:
-       print('nome não encontrado')
+    while nome!='999':
+     nome=input('digite o número do nome') 
+     if nome.isnumeric():
+        nome=int(nome)
+        nome<=len(lista)-1     
+        lista.remove(lista[nome])
+     else:
+        print('nome não encontrado',nome)
  elif select=='1':
     while True:
      n=input('quantos?')
@@ -24,12 +27,15 @@ while select!='4':
         programalista(n)          
         break    
  elif select=='2':
+    print('para sair digite 999\n') 
     while search!='999':
-     search=input('para sair digite 999\nver se existe tal nome: ').upper().strip()
+     search=input('ver se existe tal nome: ').upper().strip()
      if search in lista:
-         print(f'{search} nome está na lista')
+         print(f'{search} está na lista')
      else:
-         print(f'{search} este não está na lista')           
- elif select=='3' or select=='4':  
+         print(f'{search} não está na lista')           
+ elif select=='3' or select=='4':
+      print('-'*20)
       for nome in lista:
          print(nome,end='\n') 
+      print('-'*20)     
