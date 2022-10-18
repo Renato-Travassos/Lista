@@ -14,7 +14,7 @@ while select!='4':
     print('-'*20)
     while nome!='999':
      nome=input('digite o número do nome') 
-     if nome.isnumeric():
+     if nome.isnumeric() and nome!='999':
         nome=int(nome)
         nome<=len(lista)-1     
         lista.remove(lista[nome])
@@ -33,7 +33,7 @@ while select!='4':
      if search in lista:
          print(f'{search} está na lista')
      else:
-         print(f'{search} não está na lista')           
+         print(f'{search}  não está na lista')           
  elif select=='3' or select=='4':
       print('-'*20)
       for nome in lista:
